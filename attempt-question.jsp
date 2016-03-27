@@ -23,22 +23,25 @@ SELECT * FROM <%=request.getAttribute("subject") %>;
 %>
 <input type="hidden" name="action" value="submit-question" />
 
+<% String choice = ""; %>
 <c:forEach var="row" items="${result.rows }">
 
-<% String gname="choice"+Integer.toString(cid1);%>
+<% choice="choice"+Integer.toString(cid1);%>
 
 <c:out value="${row.id }" /> <br>
 Question:<c:out value="${row.question }" /><br>
-<INPUT TYPE="radio" NAME="<%=gname %>" VALUE="a"><c:out value="${row.a }" /><br>
-<INPUT TYPE="radio" NAME="<%=gname %>" VALUE="b"><c:out value="${row.b }" /><br>
-<INPUT TYPE="radio" NAME="<%=gname %>" VALUE="c"><c:out value="${row.c }" /><br>
-<INPUT TYPE="radio" NAME="<%=gname %>" VALUE="d"><c:out value="${row.d }" /><br>
+<INPUT TYPE="radio" NAME="<%=choice %>" VALUE="a"><c:out value="${row.a }" /><br>
+<INPUT TYPE="radio" NAME="<%=choice %>" VALUE="b"><c:out value="${row.b }" /><br>
+<INPUT TYPE="radio" NAME="<%=choice %>" VALUE="c"><c:out value="${row.c }" /><br>
+<INPUT TYPE="radio" NAME="<%=choice %>" VALUE="d"><c:out value="${row.d }" /><br>
 <% cid1++;%>
 
 </c:forEach>
-<% String cid = Integer.toString(cid1); %>
+<% String cid = Integer.toString(cid1);%>
 <input type = "hidden" name="cid" value="<%=cid %>">
-<input type = "hidden" name="gname" value = "<%=gname %>" />
+<input type = "hidden" name="gname" value = "<%=choice %>" />
+<input type = "hidden" name="subject" value = "<%=request.getAttribute("subject") %>" />
+
 <input type="submit" name="submit" value="Submit" />
 </form>
 

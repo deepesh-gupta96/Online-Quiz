@@ -282,30 +282,33 @@ public class Controller extends HttpServlet {
 			String cid1 = request.getParameter("cid");
 			int cid = Integer.parseInt(cid1);
 			cid=cid-1;
-			String subject = (String)request.getAttribute("subject");
-			String gname = (String)request.getAttribute("gname");
-			String[] split=gname.split("//w//d");
-			String choice=split[0];
-					
+			String subject = (String)request.getParameter("subject");
+			String q = "choice";
+			System.out.println(request.getParameter("subject")+"\n");
+
 			for(int i = 1; i<=cid; i++){
-				choice=choice+i;
-				if(request.getParameter("choice") != null) {
-	                if(request.getParameter("choice").equals("a")) {
-	                    map.put(i, "a");
-	                }
-	                if(request.getParameter("choice").equals("b")) {
-	                	 map.put(i, "b");
-	 	                 
-	                }
-	                if(request.getParameter("choice").equals("c")) {
-	                	 map.put(i, "c");
-	 	                
-	                }
-	                if(request.getParameter("choice").equals("d")) {
-	                	 map.put(i, "d");
-	 	                
-	                }
+				String gname = Integer.toString(i);
+				if(request.getParameter(q+gname).equals("a")) {
+					System.out.println(request.getParameter(q+gname)); 
+	                map.put(i, "a");
 	            }
+	            if(request.getParameter(q+gname).equals("b")) {
+	                System.out.println(request.getParameter(q+gname)); 
+	                map.put(i, "b");
+	 	                 
+	            }
+	            if(request.getParameter(q+gname).equals("c")) {
+	                System.out.println(request.getParameter(q+gname)); 
+	                map.put(i, "c");
+	 	                
+	            }
+	            if(request.getParameter(q+gname).equals("d")) {
+	                System.out.println(request.getParameter(q+gname)); 
+	                map.put(i, "d");
+	 	                
+	            }
+	                
+	            
 			}
 			Account account = new Account();
 			try {
