@@ -1,12 +1,12 @@
 # Online-Quiz
 We have tried to built this Web Application in J2EE using MVC Architecture.(Model , View , Controller).
 
-INSTALLATION :
+# INSTALLATION :
 
 We need a Eclipse Kepler (IDE) ,  apache tomcat server(version 7) , and MYSql for database 
 
 
-LIBRARY USED :
+# LIBRARY USED :
 
 jstl-1-2.jar , mysql-connector.jar
 
@@ -15,7 +15,7 @@ LANGUAGES USED :
 JAVA , SQL
 
 
-ABOUT PROJECT :
+# ABOUT PROJECT :
 
 WE have tried to create a simple online test / Quiz Web Application .
 
@@ -30,6 +30,6 @@ Teacher puts up  the questions , and the students will be able to appear test , 
  And we have have created a simple gui in html and css but we have not linked it due to lack of time.
  
  ## Contributors :
- Manish Jain
- Krupal Jadhav
+ Manish Jain,
+ Krupal Jadhav,
  Deepesh Gupta
